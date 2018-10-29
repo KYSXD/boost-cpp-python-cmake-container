@@ -7,4 +7,7 @@ RUN apt-get update -y && apt-get install -y \
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 CMD ["bash"]
