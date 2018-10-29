@@ -1,11 +1,9 @@
-FROM teeks99/boost-cpp-docker:gcc-8
+FROM zouzias/boost:1.67.0
 
 RUN apt-get install software-properties-common \
-    && add-apt-repository ppa:mhier/libboost-latest \
     && add-apt-repository ppa:george-edison55/cmake-3.x \
     && apt-get update -y \
     && apt-get install -y \
-        libboost-all-dev \
         python3-pip \
         cmake
 
