@@ -1,9 +1,13 @@
 FROM teeks99/boost-cpp-docker:gcc-8
 
-RUN apt-get update -y && apt-get install -y \
-    python3-pip \
-    libboost-all-dev \
-    cmake
+RUN apt-get install software-properties-common \
+    && add-apt-repository ppa:mhier/libboost-latest \
+    && add-apt-repository ppa:george-edison55/cmake-3.x \
+    && apt-get update -y \
+    && apt-get install -y \
+        libboost-latest \
+        python3-pip \
+        cmake
 
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
