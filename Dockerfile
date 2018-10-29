@@ -5,7 +5,7 @@ RUN apt-get install software-properties-common \
     && add-apt-repository ppa:george-edison55/cmake-3.x \
     && apt-get update -y \
     && apt-get install -y \
-        libboost-latest \
+        libboost-all-dev \
         python3-pip \
         cmake
 
