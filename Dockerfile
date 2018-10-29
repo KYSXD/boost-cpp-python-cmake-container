@@ -1,7 +1,7 @@
 FROM teeks99/boost-cpp-docker:gcc-8
 
 RUN apt-get update -y && apt-get install -y \
-    python-pip \
+    python3-pip \
     cmake
 
 RUN pip3 install --upgrade pip
