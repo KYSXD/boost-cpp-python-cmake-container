@@ -1,4 +1,4 @@
-FROM zouzias/boost:1.67.0
+FROM teeks99/boost-cpp-docker:gcc-8
 
 RUN apt-get update -y && apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
