@@ -1,14 +1,16 @@
 FROM zouzias/boost:1.67.0
 
-RUN apt-get install software-properties-common \
-    && add-apt-repository ppa:george-edison55/cmake-3.x \
-    && apt-get update -y \
-    && apt-get install -y \
-        python3-pip \
-        cmake
-
+RUN apt-get update -y && apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
+
+RUN wget -O cmake-3.12.3.tar.gz https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz
+RUN tar cmake-3.12.3.tar.gz
+RUN cd cmake-3.12.3 && ./configure && make && make install
+
+RUN wget -O boost_1_68_0.tar.gz https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.gz
+RUN tar xzvf boost_1_68_0.tar.gz
+RUN mv boost_1_68_0 /usr/local/
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
