@@ -1,4 +1,4 @@
-FROM reaverproject/gcc-boost:7_3_0-1.67.0
+FROM kysxd/boost-cpp-container
 
 RUN apt-get update -y && apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
