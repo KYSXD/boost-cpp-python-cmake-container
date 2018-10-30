@@ -4,13 +4,13 @@ RUN apt-get update -y && apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
+RUN wget -O boost_1_67_0.tar.gz https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.gz
+RUN tar xzvf boost_1_67_0.tar.gz
+RUN cd boost_1_67_0 && ./bootstrap.sh --prefix=/usr/local && ./b2 install
+
 RUN wget -O cmake-3.12.3.tar.gz https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz
 RUN tar xzvf cmake-3.12.3.tar.gz
 RUN cd cmake-3.12.3 && ./configure && make && make install
-
-RUN wget -O boost_1_67_0.tar.gz https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.gz
-RUN tar xzvf boost_1_67_0.tar.gz
-RUN mv boost_1_67_0 /usr/local/
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
