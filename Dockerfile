@@ -5,7 +5,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install pipenv
 
 RUN wget -O cmake-3.12.3.tar.gz https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz
-RUN tar cmake-3.12.3.tar.gz
+RUN tar xzvf cmake-3.12.3.tar.gz
 RUN cd cmake-3.12.3 && ./configure && make && make install
 
 RUN wget -O boost_1_68_0.tar.gz https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.gz
